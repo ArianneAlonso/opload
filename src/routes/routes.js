@@ -6,7 +6,7 @@ const router = Router();
 router.post('/', (req, res) => {
     console.log(req.body);
 
-    res.status(201).json({ message: "created"});
+    res.status(201).json(req.body);
 })
 
-export default { Router };
+export { Router };
