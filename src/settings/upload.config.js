@@ -11,5 +11,17 @@ const storage = multer.diskStorage({
         cb(null, crypto.randomUUID().toString()+ path.extname(file.originalname));
     },});
 //limits
-
+const maxmb = 20;
+const limits = { fileSize: 1024 * 1024 * maxmb };
 //filters
+const fileFilter = (_req, file, cb) => {
+    const fileTypes = /jpeg|jpg|png|gif|webp/;
+    const allowext =fileTypes.test(path.extname(file.originalname));
+
+    if(!allowext){
+        return cb(new Error("solo se permiten imagenes formatos jpeg, jpg, png, gif, webp"));
+    }
+    return cb(null, true);
+};
+
+export const upload = multer({ storage, limits, fileFilter });

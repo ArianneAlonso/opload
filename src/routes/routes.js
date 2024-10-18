@@ -1,12 +1,15 @@
 import { Router } from 'express';
+import { uploadImg } from '../middlewares/upload.middleware.js';
 
 const router = Router();
 
 //crear
-router.post('/', (req, res) => {
+router.post('/', uploadImg(), (req, res) => {
     console.log(req.body);
 
-    res.status(201).json(req.body);
+    res.status(201).json({
+        msg: "imagen subida",
+    });
 })
 
 export { Router };
