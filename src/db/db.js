@@ -1,0 +1,5 @@
+const dbproducts = [
+
+]
+
+export { dbproducts}
