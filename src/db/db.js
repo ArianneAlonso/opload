@@ -1,5 +1,3 @@
-const dbproducts = [
+const dbproducts = []
 
-]
-
-export { dbproducts}
+export { dbproducts }

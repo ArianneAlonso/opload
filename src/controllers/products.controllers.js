@@ -26,7 +26,6 @@ const CreateProduct = async (req, res) => {
         // Guardar el producto en la "base de datos"
         dbproducts.push(newProduct);
 
-        // Enviar respuesta exitosa
         return res.status(201).json({ message: "Producto creado exitosamente", product: newProduct });
     } catch (error) {
         return res.status(500).json({ error: "Error al crear el producto" });

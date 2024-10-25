@@ -4,12 +4,15 @@ import { uploadImg } from '../middlewares/upload.middleware.js';
 const router = Router();
 
 //crear
-router.post('/', uploadImg(), (req, res) => {
+productsrouter.post('/', uploadImg(), (req, res) => {
     console.log(req.body);
 
     res.status(201).json({
-        msg: "imagen subida",
+        Image: "http://localhost:4000/uploads/" + req.body.Image,
     });
 })
 
-export { Router };
+export { productsrouter };
+//esto se exporta en app.js
+
+//impura, usar funcion de otra parent, hooks, pura, 
