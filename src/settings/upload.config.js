@@ -5,9 +5,9 @@ import crypto from "node:crypto";
 //storage
 const storage = multer.diskStorage({
     destination: (_req, _file, cb) =>{
-        cb(null, "src/uploads/");
+        cb(null, "src/uploads/");//la carpeta donde se guardan las imagenes
     },
-    filename: (_req, _file, cb)=>{
+    filename: (_req, file, cb)=>{
         cb(null, crypto.randomUUID().toString()+ path.extname(file.originalname));
     },});
 //limits
@@ -24,4 +24,4 @@ const fileFilter = (_req, file, cb) => {
     return cb(null, true);
 };
 
-export const upload = multer({ storage, limits, fileFilter });
+export const upload = multer({ storage, limits, fileFilter }); //se exporta en upload.middleware

@@ -8,11 +8,10 @@ productsrouter.post('/', uploadImg(), (req, res) => {
     console.log(req.body);
 
     res.status(201).json({
-        Image: "http://localhost:4000/uploads/" + req.body.Image,
+        Image: "http://localhost:4000/uploads/" + req.body.uploadImg,
     });
-})
+})//la ruta es la misma que en app.js
+//el (req.body.uploadImg) y uploadImg(), se obtiene desde el middleware uploadImg
 
 export { productsrouter };
 //esto se exporta en app.js
-
-//impura, usar funcion de otra parent, hooks, pura, 

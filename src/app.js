@@ -16,10 +16,10 @@ app.use(express.static(path.join(path.resolve(), "src", "uploads")));
 
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/uploads", express.static(path.resolve(), "src", "uploads"));
+app.use("/uploads", express.static(path.resolve(), "src", "uploads"));//(/uploads) es el nombre de la ruta qe en routes la ruta de http es la misma
 
 //routes
-app.use("/product", productsrouter);
+app.use("/product", productsrouter);//(productsrouter) sale de routes
 
 //escucha
 

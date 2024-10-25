@@ -12,3 +12,4 @@ export const uploadImg = (fieldName) => (req, res, next) => {
         next();
     });
 }
+//se exporta en routes 
